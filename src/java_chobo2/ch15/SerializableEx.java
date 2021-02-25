@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class SerializableEx { //직렬화 ㄱㄱ
 	public static void main(String[] args) {
-		String filename = "UserInfo.ser";
+		String filename = "UserInfo2.ser";
 		
 		try(FileOutputStream fos = new FileOutputStream(filename);
 				BufferedOutputStream bos = new BufferedOutputStream(fos);
@@ -21,8 +21,8 @@ public class SerializableEx { //직렬화 ㄱㄱ
 			list.add(u1);
 			list.add(u2);
 			
-			oos.writeObject(u1);
-			oos.writeObject(u2);
+			oos.writeObject(list.get(0));
+			oos.writeObject(list.get(1));
 			oos.writeObject(list);
 			
 			System.out.println("Done.");
