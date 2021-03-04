@@ -2,6 +2,7 @@ package java_chobo2.ch14.collection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -70,19 +71,21 @@ public class Collection { // 컬랙션프레임웍 함수형 인터페이스
 		System.out.println();
 		
 		//Map 출력
-		HashMap<String, String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		map.put("1", "1");
 		map.put("2", "2");
 		map.put("3", "3");
 		map.put("4", "4");
-		
+		//중요
 		for(Entry<String, String> e : map.entrySet()) {
 			System.out.printf("%s:%s%n",e.getKey(),e.getValue());
 		}
 		System.out.println();
+		//중요
 		for(String key : map.keySet()) {
 			System.out.printf("%s:%s%n",key,map.get(key));
 		}
+		
 		System.out.println();
 		map.forEach((i,j)->System.out.println(i+":"+j));
 	}
